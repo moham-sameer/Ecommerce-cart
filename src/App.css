@@ -1,38 +1,320 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Nunito:wght@200;400;500;700&display=swap');
+
+*{
+  font-family: 'Fira Sans', sans-serif;
+font-family: 'Nunito', sans-serif;
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+transition: 0.2s linear;
+}
+
+/* Navbar */
+
+.nav-bar{
+  height: 78px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  padding: 0 4rem;
+}
+.nav-bar a{
+text-decoration: none;
+color: #fff;
+}
+.nav-bar h2{
+  text-decoration: none;
+}
+.nav-bar h2 a{
+  text-decoration: none;
+
+}
+.nav-bag{
+  display: flex;
+  align-items: center;
+}
+.bag-quantity{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  background: skyblue;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: black;
+  margin-left: 50x;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Not Found */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.not-found{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color: rgb(68,68,68);
+  min-height: 88vh;
+}
+.not-found h1{
+  font-size: 4rem;
+}
+.not-found p{
+  font-size: 2rem;
+}
+/*! Home */
+.home-container{
+  padding: 2rem 4rem;
+  
+}
+.home-container h2{
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+}
+#error{
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+  height: 100vh;
+}
+#load{
+  font-size: 49px;
+  font-weight: 400;
+  text-align: center;
+  height: 100vh;
+  margin-top: 7rem;
+}
+.products{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.product{
+  width: 250px;
+  max-width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: -5px -5px 10px rgba(255,255,255,0.4), 2px 2px 5px rgba(94,104,121,0.3);
+}
+.product img{
+  width: 90%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.product button{
+  border-radius: .5rem;
+  width: 100%;
+  height: 40px;
+  margin-top: 2rem;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #4b70e2;
   color: white;
+  letter-spacing: 1.4px;
+}
+.product h3{
+  font-size: 23px;
+  font-weight: 400px;
+}
+.product .details{
+  display: flex;
+  justify-content: space-between;
+   align-items: center;
+}
+.product .details .price{
+  font-size: 20px;
+  font-weight: 700;
+}
+/*! Cart Section */
+.cart-container{
+  padding: 1rem 2rem;
+
+}
+.cart-container .titles{
+  margin: 2rem 0 1rem 0;
+}
+.cart-container .titles h3{
+  font-size: 18px;
+   font-weight: 400;
+   text-transform: uppercase;
+}
+.cart-container h1{
+  
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  
+}
+ .cart-container .titles, .cart-item{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  column-gap: 0.5rem;
+}
+.cart-item{
+  border-top: 1px solid rgb(187,187,187);
+}
+.cart-container .titles .product-title
+  {
+  padding-left: 13rem;
+}
+.cart-item .cart-product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-item .cart-product img{
+  width: 180px;
+  max-width: 100%;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.cart-item .cart-product button{
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  color: gray;
+}
+.cart-item .cart-product button:hover{
+  color: black;
+}
+/* .titles{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 4rem;
+} */
+
+/* .cart-item{
+  display: flex;
+  justify-content: space-evenly;
+} */
+.cart-product-quantity{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 138px;
+  max-width: 100%;
+  border: 0.5px solid rgb(177,177,177);
+  border-radius: 2px;
+}
+.cart-product-quantity button{
+border: none;
+outline: none;
+background: none;
+padding: 0.7rem 1.5rem;
+cursor: pointer;
+
+
+}
+.cart-product-quantity .count{
+padding: 0.7rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-product-total-price{
+  font-weight: 700;
+}
+
+.cart-summary{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid rgb(187,187,187);
+  padding-top: 2rem;
+}
+.cart-summary .clear-cart{
+  margin-left: 11rem;
+  width: 138px;
+  max-width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  border: 1px solid rgb(177,177,177);
+  color: grey;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+}
+.continue-shopping,
+.start-shopping{
+  margin-top: 1rem;
+}
+.continue-shopping a,
+.start-shopping a{
+  color: gray;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+}
+.continue-shopping a:hover,
+.start-shopping a:hover{
+  color: black;
+}
+
+.continue-shopping a span,
+.start-shopping a span{
+  margin-left: 0.5rem;
+}
+
+.cart-checkout{
+  width: 278px;
+  max-width: 100%;
+
+}
+.cart-checkout .subtotal{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28px;
+
+}
+.cart-checkout .subtotal .amount{
+  font-weight: 700;
+
+}
+.cart-checkout p{
+  font-size: 14px;
+  font-weight: 200;
+  margin: 0.5rem 0;
+}
+.cart-checkout button{
+  border-radius: .5rem;
+  width: 100%;
+  height: 40px;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #4b70e2;
+  color: white;
+  letter-spacing: 1px;
+}
+.cart-summary .subtotal .amount{
+  margin-right: 1rem;
+}
+/* ? empty carts */
+ .cart-empty{
+  margin-top: 3rem;
+  font-size: 20px;
+  color: rgb(84,84,84);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
