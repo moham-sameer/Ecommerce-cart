@@ -18,14 +18,14 @@ const cartSlice = createSlice({
                 ...state.cartItems[itemIndex], cartQuantity:state.cartItems[itemIndex].cartQuantity+1
             }
             toast.info("Increased product quantity",{
-                position:"bottom-left"
+                position:"top-right"
             })
         }else{
               
             const tempProduct = {...action.payload, cartQuantity:1}
               state.cartItems.push(tempProduct)
             toast.success(`${action.payload.name} added to cart`,{
-                position: "bottom-center",
+                position: "top-left",
             });
         }
 
