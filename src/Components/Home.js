@@ -1,10 +1,11 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { addToCart } from '../state/CartSlice'
 import { Link } from 'react-router-dom'
 import { useGetAllProductsQuery } from '../state/ProductsApi'
 const Home = () => {
  const {data,error, isLoading} = useGetAllProductsQuery()
+ 
  const dispatch = useDispatch();
  const handleCart= (product)=>{
 dispatch(addToCart(product))

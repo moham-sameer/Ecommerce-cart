@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {Link}  from 'react-router-dom'
+import {Link, useNavigate}  from 'react-router-dom'
 import {getTotals,removeFromCart,clearCart,addToCart,decCart} from '../state/CartSlice'
 const Cart = () => {
   const cartData = useSelector((state)=>state.cart)
@@ -11,6 +11,9 @@ const Cart = () => {
   const remove = (product)=>{
     dispatch(removeFromCart(product))
   }
+  // for protecting router
+  const auth = useSelector((state)=>state.auth)
+  const history = useNavigate()
   
   const decrease = (product)=>{
     dispatch(decCart(product))
@@ -77,7 +80,8 @@ const Cart = () => {
             <span className='amount'>${cartData.cartTotalAmount}</span>
           </div>
           <p>Taxes and shipping calculated at checkout</p>
-          <button>Checkout</button>
+          {auth._id ? <button>Checkout</button>: <button onClick={()=> history("/login")} style={{backgroundColor:"orangered",color:"black"}}>Login to Checkout</button> }
+         
           <div className='continue-shopping'>
 
           <Link to="/">

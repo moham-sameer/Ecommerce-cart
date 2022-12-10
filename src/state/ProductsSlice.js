@@ -10,7 +10,7 @@ export const productsFetch = createAsyncThunk(
     async() => {
         try {
 
-            const response = await axios.get('https://mernb.herokuapp.com/products')
+            const response = await axios.get('http://localhost:3001/products')
             return response.data;
         } catch(error){
             console.log(error)
